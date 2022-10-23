@@ -3,15 +3,16 @@ import {Card} from './styles'
 
 type Props = {
     word: Word
+    meanings: Word
 }
 
-const WordCard = ({word}: Props) => {
+const WordCard = ({word, meanings}: Props) => {
     return (
         <Card>
-            
+           hello
         </Card>
         
-      
+    )
 }
 
 export default WordCard

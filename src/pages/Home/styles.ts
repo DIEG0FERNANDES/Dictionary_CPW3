@@ -17,3 +17,7 @@ export const FilterInput = styled.input.attrs({ type: 'text' })`
   text-align: center;
   padding: 0 10px;
 `
+
+export const CoinCard = styled.span`
+  font-family: 'bold';
+`

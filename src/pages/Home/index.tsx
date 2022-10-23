@@ -1,16 +1,20 @@
 import { Container, FilterInput } from './styles'
 import axios from 'axios'
 import { useEffect, useState } from 'react';
+import WordCard from '../../components/WordCard';
 
-const Home = ({ world, setWorld}}) => {
+const Home = () => {
   const [word, setWord] = useState("")
-  const [filter, setFilter] = useState("")
   const [meanings, setMeanings] = useState("")
+
+  const handleChange = () => {
+
+  }
   
   const dictionaryApi = async () => {
     try{
       const data = await axios.get(
-        "https://api.dictionaryapi.dev/api/v2/entries/en/hello"
+        "https://api.dictionaryapi.dev/api/v2/entries/en/${word}"
       );
       setMeanings(data.data);
     } catch (error) {
@@ -22,15 +26,18 @@ const Home = ({ world, setWorld}}) => {
 
   useEffect(() => {
     dictionaryApi()
-  }, [])
+  }, [word])
   
   
 
   return(
-    <Container>
-      <FilterInput type="text"placeholder="type here" value={filter}
-      onChange={(e) => setFilter(e.target.value)} />
-    </Container>
+    <>
+      <Container>
+      <FilterInput type="text"placeholder="type here" value={word}
+      onChange={(e) => setWord(e.target.value)} />
+      </Container>
+      <WordCard word={word} meanings={meanings}/>
+    </>
   )
 }
 export default Home
