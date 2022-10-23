@@ -1,4 +1,3 @@
-import Word from '../../models/world'
 import {Card} from './styles'
 
 type Props = {
@@ -8,8 +7,14 @@ type Props = {
 
 const WordCard = ({word, meanings}: Props) => {
     return (
-        <Card>
-           hello
+        <Card className="meanings">
+           {word === "" ?(<span className="subTitle">start word here</span>):(meanings.map((mean)=>mean.meanings.map((item)=>item.definitions.map((def)=>(<div>
+            className="singleMean"
+            style={
+                {backgroundColor: "white", color: "black"}
+            }
+            <b>{def.definition}</b>
+           </div>)))))}
         </Card>
         
     )

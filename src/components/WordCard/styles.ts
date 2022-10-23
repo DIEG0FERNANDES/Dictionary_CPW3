@@ -15,3 +15,7 @@ export const Typography = styled.h1`
   cursor: pointer;
   color: black;
 `
+
+export const subTitle = styled.div`
+ color:white
+`

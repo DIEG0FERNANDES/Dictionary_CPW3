@@ -3,13 +3,11 @@ import axios from 'axios'
 import { useEffect, useState } from 'react';
 import WordCard from '../../components/WordCard';
 
+
+
 const Home = () => {
   const [word, setWord] = useState("")
   const [meanings, setMeanings] = useState("")
-
-  const handleChange = () => {
-
-  }
   
   const dictionaryApi = async () => {
     try{
@@ -36,7 +34,7 @@ const Home = () => {
       <FilterInput type="text"placeholder="type here" value={word}
       onChange={(e) => setWord(e.target.value)} />
       </Container>
-      <WordCard word={word} meanings={meanings}/>
+        <WordCard word={word} meanings={meanings}/>
     </>
   )
 }
