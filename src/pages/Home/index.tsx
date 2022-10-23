@@ -12,7 +12,7 @@ const Home = () => {
   const dictionaryApi = async () => {
     try{
       const data = await axios.get(
-        "https://api.dictionaryapi.dev/api/v2/entries/en/${word}"
+        "https://api.dictionaryapi.dev/api/v2/entries/en/"
       );
       setMeanings(data.data);
     } catch (error) {
