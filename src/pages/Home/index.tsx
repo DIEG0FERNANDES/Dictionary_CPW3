@@ -32,9 +32,9 @@ const Home = () => {
     <>
       <Container>
       <FilterInput type="text"placeholder="type here" value={word}
-      onChange={(e) => setWord(e.target.value)} />
+      onChange={(e) => setWord(e.target.value)}/>
       </Container>
-        <WordCard word={word} meanings={meanings}/>
+      <WordCard />
     </>
   )
 }
